@@ -1,4 +1,4 @@
-import mongoose, { mongo } from  'mongoose'
+import mongoose from  'mongoose'
 
 
 const orderSchema = mongoose.Schema({
@@ -22,7 +22,8 @@ const orderSchema = mongoose.Schema({
     },
     paymentMethod : {
        type: String,
-       required: true
+       required: true,
+       default :false
 
     },
     paymentResult : {
@@ -36,14 +37,17 @@ const orderSchema = mongoose.Schema({
     taxPrice : {
         type: Number,
         required : true,
+        default: 0.0
     },
     shippingPrice : {
         type: Number,
         required : true,
+        default: 0.0
     },
     totalPrice : {
         type: Number,
         required : true,
+        default: 0.0
     },
     isPaid : {
         type: Boolean,

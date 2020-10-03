@@ -1,4 +1,4 @@
-import mongoose, { mongo } from  'mongoose'
+import mongoose from  'mongoose'
 
 const reviewsSchema = mongoose.Schema({
     name : {type: String,required: true},
@@ -8,7 +8,7 @@ const reviewsSchema = mongoose.Schema({
     timestamps: true
 })
 const productSchema = mongoose.Schema({
-    User : {
+    user : {
         type : mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'User'
@@ -18,17 +18,21 @@ const productSchema = mongoose.Schema({
         required: true,
       
     },
+    image :{
+        type: String,
+        required : true,
+    },
     brand : {
         type: String,
         require: true
     },
     category : {
-        type : Boolean,
+        type : String,
         required : true,
 
     },
     description : {
-        type : Boolean,
+        type : String,
         required : true,
 
     },
